@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+
+	<div th:insert="header.html"></div>
+
+  <div class="container">
+      <div class="card">
+  
+  
+   		 <h1 class="text-center">Welcome to the Home Page!</h1>
+    	<p class="text-center">Hello,  This is your personalized home page.</p>
+    
+    
+    <div class="card-body">
+      <h4 class="card-title">Current Date and Time:</h4>
+      <div id="datetime" class="text-right"></div>
+    </div>
+  </div>
+    
+    
+  </div>
+  
+  <div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Add Task</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" placeholder="Enter task description">
+        </div>
+        
+        <br>
+        
+        
+        <div class="form-group">
+          <label for="attachment">Attachment</label>
+          <input type="file" class="form-control-file" id="attachment">
+        </div>
+        
+	
+        <button type="submit" class="btn btn-success">Submit</button>
+	
+        
+        
+      </form>
+    </div>
+  </div>
+</div>
+  
+  
+  
+  
+
+<script >
+  function updateDateTime() {
+    var datetimeElement = document.getElementById("datetime");
+    var currentDate = new Date();
+    datetimeElement.innerText = currentDate.toLocaleString();
+  }
+
+  setInterval(updateDateTime, 1000); // Update every second
+</script>
+  
+  
+  
+  
+  
+</body>
+</html>
